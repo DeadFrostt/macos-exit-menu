@@ -1,0 +1,109 @@
+.window-controls {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    position: absolute;
+    top: 2px;
+    right: 20px;
+    gap: 6px;
+}
+
+.window-control {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: all 0.1s ease-in-out;
+    position: relative;
+}
+
+/* Close button */
+.window-control.close {
+    background-color: #ff5f57;
+    border: 0.5px solid rgba(0, 0, 0, 0.1);
+    order: 3;
+}
+
+/* Minimize button */
+.window-control.minimize {
+    background-color: #febc2e;
+    border: 0.5px solid rgba(0, 0, 0, 0.1);
+    order: 1;
+}
+
+/* Maximize button */
+.window-control.minmax,
+.window-control.maximize {
+    background-color: #28c940;
+    border: 0.5px solid rgba(0, 0, 0, 0.1);
+    order: 2;
+}
+
+/* Hover states */
+.window-control:hover {
+    transform: none;
+    opacity: 0.8;
+}
+
+/* Hide default maximize icon */
+.window-control.codicon::before {
+    display: none;
+}
+
+/* Hover icons*/
+.window-control.close:hover::before {
+    content: "×";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 10px;
+    color: #4a0002;
+}
+
+.window-control.minimize:hover::before {
+    content: "−";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 10px;
+    color: #9a5900;
+}
+
+.window-control.minmax:hover::before,
+.window-control.maximize:hover::before {
+    content: "□";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 9px;
+    color: #006500;
+}
+
+/* Container styles */
+.window-controls-container {
+    width: 100%;
+    height: 32px;
+    background: transparent;
+    position: relative;
+    -webkit-app-region: drag;
+}
+
+/* Make buttons non-draggable */
+.window-control {
+    -webkit-app-region: no-drag;
+}
+
+/* Active states */
+.window-control:active {
+    opacity: 0.6;
+}
+
+/* When window is not focused */
+.window-inactive .window-control {
+    opacity: 0.5;
+}

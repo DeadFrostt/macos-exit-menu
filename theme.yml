@@ -1,0 +1,5 @@
+name: Macos exit menu for windows
+stylesheets:
+  - file: main.css
+    name: Main Stylesheet
+    description: Basic theme that repalces windows exit buttons with macOS ones.
