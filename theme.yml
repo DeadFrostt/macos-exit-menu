@@ -1,4 +1,4 @@
-name: Macos exit menu for windows
+name: macOS exit menu for windows
 stylesheets:
   - file: main.css
     name: Main Stylesheet
